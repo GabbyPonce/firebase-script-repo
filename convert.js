@@ -1,10 +1,9 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./oximeter-research-firebase-adminsdk-fbsvc-6fb5768fdf.json'); // Path to your downloaded key
+const serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT_KEY); // Path to your downloaded key
 
 // Initialize the Firebase Admin SDK
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://oximeter-research-default-rtdb.asia-southeast1.firebasedatabase.app' // Replace with your database URL
 });
 
 // References to the database paths
